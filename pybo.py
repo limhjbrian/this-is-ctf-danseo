@@ -24,7 +24,8 @@ def home():
 @app.route('/reset')
 def reset():
     # 명시적으로 게임 초기화
-    random.seed=2
+    nums=[2,7,11,15]
+    random.seed=nums[random.randint(100)%4]
     session['car_door'] = random.randint(1, 3)
     session['player_choice'] = None
     session['revealed_door'] = None
