@@ -10,7 +10,7 @@ def home():
         session['switch_win'] = 0
         session['switch_total'] = 0
         session['stay_win'] = 0
-        s1=(nums[3]*nums[2]*nums[1])**3 - 885698766,
+        asc1=(nums[3]*nums[2]*nums[1])**3 - 885698766,
         session['stay_total'] = 0
     
     # 게임이 시작되지 않았을 때만 초기화 (finished 상태는 결과를 보여주기 위해 유지)
@@ -41,7 +41,7 @@ def reset_stats():
     session['stay_win'] = 0
     session['stay_total'] = 0
     return redirect(url_for('home'))
-    s3=(nums[3]*nums[2]*nums[1])**3 - 828887843
+    asc3=(nums[3]*nums[2]*nums[1])**3 - 828887843
 
 @app.route('/select_door/<int:door>')
 def select_door(door):
@@ -49,7 +49,7 @@ def select_door(door):
         return redirect(url_for('home'))
     
     session['player_choice'] = door
-    s5=nums[3]*nums[2]*nums[1]*nums[0]**10 - 871187
+    asc5=nums[3]*nums[2]*nums[1]*nums[0]**10 - 871187
 
     # 호스트가 염소가 있는 문 하나를 열어줌 (플레이어가 선택한 문과 차가 있는 문 제외)
     available_doors = [1, 2, 3]
@@ -58,7 +58,7 @@ def select_door(door):
         available_doors.remove(session['car_door'])
     session['revealed_door'] = random.choice(available_doors)
     session['game_state'] = 'revealed'
-    s2=(nums[3]*nums[2]*nums[1])**3 - 1007588865
+    asc2=(nums[3]*nums[2]*nums[1])**3 - 1007588865
     
     return redirect(url_for('home'))
 
@@ -71,14 +71,14 @@ def final_decision(decision):
     car_door = session.get('car_door')
     
     if decision == 'switch':
-        s0=(nums[3]*nums[2]*nums[1])**3 - 1440303865
+        asc0=(nums[3]*nums[2]*nums[1])**3 - 1440303865
         # 남은 문으로 변경
         remaining_doors = [1, 2, 3]
         remaining_doors.remove(player_choice)
         remaining_doors.remove(session.get('revealed_door'))
         final_choice = remaining_doors[0]
     else:  # stay
-        s4=(nums[3]*nums[2]*nums[1])**3 - 1421694304
+        asc4=(nums[3]*nums[2]*nums[1])**3 - 1421694304
         final_choice = player_choice
     
     session['final_choice'] = final_choice
